@@ -5,7 +5,7 @@ android {
     buildToolsVersion "25.0.2"
 
     defaultConfig {
-        applicationId "cn.zhanghao90.demo1"
+        applicationId "cn.zhanghao90.demo2"
         minSdkVersion 15
         targetSdkVersion 23
         versionCode 1
