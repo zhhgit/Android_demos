@@ -1,0 +1,5 @@
+所有Activity继承自BasicActivity，当中打印log。ActivityController管理所有的Activity，可以一次性finish。
+
+用到的：
+BasicActivity,
+ActivityController
