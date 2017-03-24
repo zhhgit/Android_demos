@@ -83,3 +83,22 @@ Button,
 ProgressBar,
 AlertDialog,
 ProgressDialog
+
+# Demo9
+
+include方式引入自定义布局。自定义控件。
+
+用到的：
+LayoutInflater,
+ActionBar
+
+# Demo10
+
+简单ListView，自定义ListView。
+
+用到的：
+LayoutInflater,
+ImageView,
+TextView,
+ArrayAdapter,
+AdapterView.OnItemClickListener
