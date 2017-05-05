@@ -1,0 +1,5 @@
+SharedPreferences存储与读取
+
+用到的：
+SharedPreferences,
+getSharedPreferences
