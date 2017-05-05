@@ -139,3 +139,21 @@ FileInputStream,
 BufferedReader,
 openFileInput,
 openFileOutput
+
+# Demo14
+
+SharedPreferences存储与读取
+
+用到的：
+SharedPreferences,
+getSharedPreferences
+
+# Demo15
+
+SQLite存储与读取
+
+用到的：
+SQLiteOpenHelper,
+SQLiteDatabase,
+Cursor,
+ContentValues
