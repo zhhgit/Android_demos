@@ -1,0 +1,12 @@
+选择图片并显示。
+
+用到的：
+ContextCompat.checkSelfPermission,
+Manifest.permission.WRITE_EXTERNAL_STORAGE,
+PackageManager.PERMISSION_GRANTED,
+ActivityCompat.requestPermissions,
+DocumentsContract.isDocumentUri,
+DocumentsContract.getDocumentId,
+ContentUris.withAppendedId,
+getContentResolver,
+BitmapFactory.decodeFile
