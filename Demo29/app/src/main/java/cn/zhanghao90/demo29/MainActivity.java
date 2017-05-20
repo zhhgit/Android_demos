@@ -9,31 +9,40 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
     private DrawerLayout mDrawerLayout;
+    private List<Item> list = new LinkedList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         //添加ToolBar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolBar1);
         setSupportActionBar(toolbar);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout1);
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+
         //设置ToolBar左侧按钮
         ActionBar actionBar = getSupportActionBar();
         if(actionBar != null){
             actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setHomeAsUpIndicator(R.drawable.tel);
         }
-        //设置NavigationView
+
+        //设置NavigationView,左侧划出
         navigationView.setCheckedItem(R.id.navItem1);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener(){
             @Override
@@ -42,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
+
         //设置悬浮按钮
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -57,6 +67,14 @@ public class MainActivity extends AppCompatActivity {
                         }).show();
             }
         });
+
+        //设置RecyclerView
+        initList();
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView1);
+        GridLayoutManager layoutManager = new GridLayoutManager(this,2);
+        recyclerView.setLayoutManager(layoutManager);
+        ItemAdapter adapter = new ItemAdapter(list);
+        recyclerView.setAdapter(adapter);
     }
 
     @Override
@@ -79,5 +97,13 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
         return true;
+    }
+
+    //初始化RecyclerView数据
+    private void initList(){
+        for(int i=0;i<10;i++){
+            Item item = new Item("item",R.drawable.logo);
+            list.add(item);
+        }
     }
 }
